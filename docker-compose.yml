@@ -1,0 +1,16 @@
+version: '1'
+
+services:
+  homechecker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      INTRA_APP_PUBLIC: PUBLIC
+      INTRA_APP_SECRET: SECRET
+      HOMEMAKER_ENDPOINT: "https://homemaker-endpoint/api/v1"
+      HOMEMAKER_TOKEN: TOKEN
+      PERCHECK_TIME_IN_SEC: 500
+    volumes:
+      - /var/log/homechecker:/app/logs
+    container_name: homechecker
