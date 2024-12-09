@@ -3,7 +3,7 @@ version: '1'
 services:
   homechecker:
     build:
-      context: .
+      context: ./homechecker
       dockerfile: Dockerfile
     environment:
       INTRA_APP_PUBLIC: PUBLIC
